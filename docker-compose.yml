@@ -1,0 +1,30 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    depends_on:
+      - auth
+      - cart
+      - items
+      - order
+
+  auth:
+    build:
+      context: ./authenticate
+      dockerfile: Dockerfile
+
+  cart:
+    build:
+      context: ./cart
+      dockerfile: Dockerfile
+
+  items:
+    build:
+      context: ./items
+      dockerfile: Dockerfile
+
+  order:
+    build:
+      context: ./order
+      dockerfile: Dockerfile
